@@ -18,14 +18,7 @@
 - [uvicorn](https://www.uvicorn.org/)
 
 ## Установка
-
-1. **Клонируйте репозиторий:**
-
-   ```bash
-   git clone https://github.com/your_username/your_repository.git
-   cd your_repository
-   ```
-   
+ф
 2. **Создайте и активируйте виртуальное окружение:**
     ```bash
    python -m venv venv source venv/bin/activate  # Для Windows: venv\Scripts\activate
@@ -51,8 +44,30 @@ python bot.py
 
 После запуска бот начнёт опрашивать пользователей. Health endpoint будет доступен по адресу http://localhost:8080/health.
 
-Docker
+**Docker**
 
 Сборка образа
 
 Для сборки Docker-образа используйте следующую команду (с указанием нужной архитектуры):
+```bash 
+docker build --platform linux/amd64 -t bot_answer3 .
+```
+6.2. Тегирование образа
+```bash
+docker tag bot_answer3 botanswer.cr.cloud.ru/bot_answer3:latest
+```
+6.3. Аутентификация и публикация образа
+```bash
+docker login botanswer.cr.cloud.ru -u <key_id> -p <key_secret>
+docker push botanswer.cr.cloud.ru/bot_answer3:latest
+```
+7. Развёртывание в Cloud.ru Container Apps
+	1.	Войдите в личный кабинет Cloud.ru и перейдите в раздел Container Apps.
+	2.	Создайте новое приложение:
+	•	Название контейнера: например, bot-answer.
+	•	URI образа: botanswer.cr.cloud.ru/bot_answer3:latest.
+	•	Порт контейнера: укажите 8080 (порт, на котором работает Health endpoint).
+	•	Health Probe: настройте GET-запрос на /health.
+	•	Переменные окружения: задайте API_TOKEN и ADMIN_CHAT.
+	•	Ресурсы: при необходимости укажите лимиты CPU и памяти.
+	3.	Сохраните и запустите приложение.
