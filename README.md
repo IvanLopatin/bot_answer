@@ -26,6 +26,8 @@
    cd your_repository
    ```
    
-	2.	Создайте и активируйте виртуальное окружение:
+2. **Создайте и активируйте виртуальное окружение:**
+    ```bash
 python -m venv venv
 source venv/bin/activate  # Для Windows: venv\Scripts\activate
+```
