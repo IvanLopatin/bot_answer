@@ -24,4 +24,8 @@
    ```bash
    git clone https://github.com/your_username/your_repository.git
    cd your_repository
+   ```
    
+	2.	Создайте и активируйте виртуальное окружение:
+python -m venv venv
+source venv/bin/activate  # Для Windows: venv\Scripts\activate
