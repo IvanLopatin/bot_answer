@@ -27,7 +27,25 @@
    ```
    
 2. **Создайте и активируйте виртуальное окружение:**
-    ```bash
-python -m venv venv
-source venv/bin/activate  # Для Windows: venv\Scripts\activate
-```
+    ```bash python -m venv venv source venv/bin/activate  # Для Windows: venv\Scripts\activate```
+3.	Установите зависимости:
+   ```bash pip install -r requirements.txt ```
+
+   Конфигурация
+
+Перед запуском бота необходимо задать следующие переменные окружения или изменить соответствующие константы в коде:
+	•	API_TOKEN — токен вашего Telegram-бота, полученный через @BotFather.
+	•	ADMIN_CHAT — ID или юзернейм администратора, которому будут отправляться итоговые отчёты (например, @ivan_yas).
+
+Локальный запуск
+
+Чтобы запустить бота локально, выполните:
+```bash python bot.py ```
+
+После запуска бот начнёт опрашивать пользователей. Health endpoint будет доступен по адресу http://localhost:8080/health.
+
+Docker
+
+Сборка образа
+
+Для сборки Docker-образа используйте следующую команду (с указанием нужной архитектуры):
