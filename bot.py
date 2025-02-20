@@ -13,8 +13,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Токен и идентификатор чата администратора
-API_TOKEN = "7587439282:AAGXUVVsgplLLU3pD0K1hn5JQThMoUY20Jk"
-ADMIN_CHAT = 1270626619
+API_TOKEN = "<TOKEN>"
+ADMIN_CHAT = "<ID>"
 
 # Инициализация бота, хранилища и диспетчера
 bot = Bot(token=API_TOKEN)
